@@ -3,8 +3,6 @@ from .serializers import OrderSerializer
 from .models import Order
 from django.http import JsonResponse
 from django.contrib.auth import get_user_model
-from django.views.decorators.csrf import csrf_exempt
-
 
 # User Authentication view
 def validate_user_session(id, token):
@@ -54,13 +52,6 @@ def add_order(request, id, token):
 class OrderViewSet(viewsets.ModelViewSet):
     queryset = Order.objects.all().order_by('id')
     serializer_class = OrderSerializer
-
-
-
-
-
-
-
 
 
 

@@ -4,7 +4,7 @@
 
 **<span style="color:green;">Python Version = 3.9</span>**
 
-**<span style="color:green;">Postgresql Version = 3.9</span>**
+**<span style="color:green;">Postgresql Version = ?????</span>**
 
 First you have to clone the project
 
@@ -69,24 +69,24 @@ First you have to clone the project
 - Navigate to ```http://localhost/```
 
 
-**<span style="color:red;">Initial data for products category and products are automatically added when the migration for see as below home page</span>**
+**<span style="color:red;">Initial data for user, products, category and order models are automatically added when the migration for see as below home page</span>**
 
 **Sample Demo For Home**
-![Alt text](Demo Images/homepage.PNG?raw=true "Sample Demo")
+![Alt text](Home_Page.PNG?raw=true "Sample Demo")
 
 
 **View All CRUD API Using Swagger**
 - Navigate to ```http://localhost/swagger```
 
 **Sample Demo For SwaggerUI**
-![Alt text](Demo Images/swagger.png?raw=true "Sample Demo")
+![Alt text](swagger.png?raw=true "Sample Demo")
 
 
 
 **PROJECT USE POSTGRESQL With Docker**
 
-* Super user name:- admin
-* Super User password:- root
+* USERNAME :- postgres
+* PASSWORD :- root
 
 
 <span style="color:orange;">User Stories</span>
@@ -107,7 +107,7 @@ First you have to clone the project
 
 * Super-user can ADD/UPDATE/DELETE products
 
-	*By checking who logged in to the system and check whether above 'super_user' parameter True, in FE we can enable the CRUD of products*
+	*By checking who logged in to the system and check whether above 'super_user' parameter True, in FE we can enable the CRUD for products. Then we can allow only admin to add/update/delete products*
 	![Alt text](Demo Images/product.png?raw=true "Sample Demo")
 
 * Every user who navigate to the web app can view all products
@@ -128,8 +128,35 @@ First you have to clone the project
 
 
 * Registered user can add orders
+
+	*User can add products to the cart using this POST method*
+
+	```
+ 	curl -X POST "http://127.0.0.1:8000/api/order/" -H  "accept: application/json" -H  "Content-Type: application/json" -H  "X-CSRFToken: lfiXexhNRupk1X2xPdV5o3jWed5MxZrbX9kwNEFA9UjSMrEi6cu9S5dSsyZbjs5b" -d "{  \"product_names\": \"test\",  \"total_products\": \"test\",  \"total_amount\": \"test\",  \"transaction_id\": \"test\",  \"order_confirm\": true,  \"user\": 1,  \"product\": 2}
+	```
+
+* Registered user can remove orders
+
+	*User can remove products from cart using these DELETE method*
+	```
+	curl -X DELETE "http://127.0.0.1:8000/api/order/4/" -H  "accept: application/json" -H  "X-CSRFToken: lfiXexhNRupk1X2xPdV5o3jWed5MxZrbX9kwNEFA9UjSMrEi6cu9S5dSsyZbjs5b
+	```
+
 * Registered user can view all orders
-* Registered user can edit their orders
+
+	*User can see all the products in the cart using this GET method*
+	```
+	curl -X GET "http://127.0.0.1:8000/api/order/" -H  "accept: application/json" -H  "X-CSRFToken: lfiXexhNRupk1X2xPdV5o3jWed5MxZrbX9kwNEFA9UjSMrEi6cu9S5dSsyZbjs5b
+	```
+
+* Registered user can edit their orders details
+	
+	*User can confirm the order and add the delivery date by editing  the below order details using PATCH method*
+	```
+ 	curl -X PATCH "http://127.0.0.1:8000/api/order/1/" -H  "accept: application/json" -H  "Content-Type: application/json" -H  "X-CSRFToken: hJXWytFUbpjqOPvGJDiI8PwBTHsdJMWX76AtT9osFVW1TyYJWuoh4fOkntVNnffb" -d "{  \"product_names\": \"test\",  \"order_confirm\": true,  \"delivery_date_time\": \"2023-10-03T23:51:56.508Z\",  \"user\": 1,  \"product\": 1}
+    ```
+	![Alt text](Demo Images/edit_order.png?raw=true "Sample Demo")
+	
 
 
 

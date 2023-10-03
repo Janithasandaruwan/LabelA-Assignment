@@ -13,6 +13,7 @@ class Order(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     transaction_id = models.CharField(max_length=150, default=0)
     order_confirm = models.BooleanField(default=False, verbose_name='Order Confirm')
+    delivery_date_time = models.DateTimeField(auto_now_add=False)
     
     def __str__(self):
         return f"{self.order_confirm}"
