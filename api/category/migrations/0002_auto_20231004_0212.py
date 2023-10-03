@@ -1,6 +1,7 @@
 from api.category.models import Category
 from django.db import migrations
 
+
 class Migration(migrations.Migration):
     def seed_data(apps, schema_editor):
         cat1 = Category(name="Toyota", description="Toyota Car Parts")
@@ -25,7 +26,7 @@ class Migration(migrations.Migration):
         cat10.save()
 
     dependencies = [
-        ('category', '0002_auto_20201107_1405'),
+        ('category', '0001_initial'),
     ]
 
     operations = [

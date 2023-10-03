@@ -36,7 +36,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = CustomUser
         
         # Fields to be serialized 
-        fields = ('name', 'email', 'password', 'phone', 'gender', 'is_active', 'is_staff', 'is_superuser') 
+        fields = ('id', 'name', 'email', 'password', 'phone', 'gender', 'is_active', 'is_staff', 'is_superuser')
         
         # Make the password inaccessible in GET request and don't show in plain text  
         extra_kwargs = {

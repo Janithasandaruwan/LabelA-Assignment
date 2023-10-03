@@ -1,4 +1,5 @@
 from api.product.models import Product
+from api.category.models import Category
 from django.db import migrations
 
 
@@ -7,22 +8,26 @@ class Migration(migrations.Migration):
         prod1 = Product(name="Toyota Break Pad",
                         description="Brake rotors of disc brakes rotate with the wheels, and brake pads, which are fitted to the brake calipers, clamp on these rotors to stop or decelerate the wheels.",
                         price="800",
-                        stock=500)
+                        stock=500,
+                        category=Category(id=1))
         prod1.save()
         prod2 = Product(name="Winker Mirror",
                         description="One is the mirror installed inside the car, called the rearview mirror or back mirror. The rearview mirror is attached to the upper center of the car's windshield and serves to check directly behind the car.",
                         price="350",
-                        stock=200)
+                        stock=20,
+                        category=Category(id=2))
         prod2.save()
         prod3 = Product(name="Gear Lever",
                         description="Gears can be classified by shape as involute, cycloidal and trochoidal gears.",
                         price="750",
-                        stock=300)
+                        stock=300,
+                        category=Category(id=3))
         prod3.save()
         prod4 = Product(name="Senota Windscreen",
                         description="A cracked windscreen can impede a driver's vision, making it difficult to see approaching traffic and other road hazards.",
                         price="900",
-                        stock=100)
+                        stock=100,
+                        category=Category(id=4))
         prod4.save()
 
     dependencies = [

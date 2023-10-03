@@ -1,6 +1,6 @@
 /* Body css */
 body {
-    background-color: #81C8F8;
+    background-color: #f57d57;
     height: 100%;
     margin: 0;
 }
@@ -57,7 +57,7 @@ header {
 /* Style for the left column (categories) */
 .categories {
     flex: 1;
-    background-color: #81C8F8;
+    background-color: #f57d57;
     padding: 20px;
     width: 20%;
 }
