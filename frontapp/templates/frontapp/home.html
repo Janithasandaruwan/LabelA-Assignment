@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% block content %}
+
+<div class="container">
+    <div class="categories">
+        <h2>Browse Categories</h2>
+        <ul>
+            <a href=""><li>All Categories</li></a>
+            {% for category in categories %}
+                <a href=""><li>{{ category.name }}</li></a>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="items">
+        {% for product in products %}
+        <div class="product-box">
+            <div class="product-title"><a href="">{{ product.name }}</a></div>
+            <div class="product-description">{{ product.description }}</div>
+            <div class="product-price">${{ product.price }}</div>
+            <div class="product-price">Stocks: {{ product.stock }}</div>
+            <button class="add-to-cart-btn">Add to Cart</button>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock content %}
