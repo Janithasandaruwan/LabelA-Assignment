@@ -76,16 +76,19 @@ WSGI_APPLICATION = 'autocompany.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get("POSTGRES_DB", "postgres"),
-        'USER': os.environ.get("POSTGRES_USER", "postgres"),
-        'PASSWORD': os.environ.get("POSTGRES_PASSWORD", "root"),
-        'HOST': "db",
-        'PORT': "5432",
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.postgresql',
+        # 'NAME': os.environ.get("POSTGRES_DB", "postgres"),
+        # 'USER': os.environ.get("POSTGRES_USER", "postgres"),
+        # 'PASSWORD': os.environ.get("POSTGRES_PASSWORD", "root"),
+        # 'HOST': "db",
+        # 'PORT': "5432",
     }
 }
+
+# Define the live URL
+LIVE_URL = "http://127.0.0.1:8000"
 
 
 # Password validation

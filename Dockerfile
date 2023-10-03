@@ -20,6 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy our codebase into the container
 COPY . .
 
+RUN chmod u+x ./manage.py
 RUN ./manage.py collectstatic --noinput
 
 # Ops Parameters

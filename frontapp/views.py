@@ -1,5 +1,8 @@
 from django.shortcuts import render
 import requests
+from django.conf import settings
+
+live_url = settings.LIVE_URL
 
 def home(request):
     categories = get_all_categories()
@@ -8,11 +11,11 @@ def home(request):
     return render(request, 'frontapp/home.html', context)
 
 def get_all_categories():
-    end_point = 'http://localhost/api/category/'
+    end_point = f'{live_url}/api/category/'
     response = requests.get(end_point)
     return response.json()
 
 def get_all_products():
-    end_point = 'http://localhost/api/product/'
+    end_point = f'{live_url}/api/product/'
     response = requests.get(end_point)
     return response.json()
