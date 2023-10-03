@@ -74,14 +74,14 @@ First you have to clone the project
 **<span style="color:red;">Initial data for products category and products are automatically added when the migration for see as below home page</span>**
 
 **Sample Demo For Home**
-![Alt text](homepage.PNG?raw=true "Sample Demo")
+![Alt text](Demo Images/homepage.PNG?raw=true "Sample Demo")
 
 
 **View All CRUD API Using Swagger**
 - Navigate to ```http://localhost/swagger```
 
 **Sample Demo For SwaggerUI**
-![Alt text](swagger.png?raw=true "Sample Demo")
+![Alt text](Demo Images/swagger.png?raw=true "Sample Demo")
 
 
 
@@ -90,11 +90,29 @@ First you have to clone the project
 * Super user name:- admin
 * Super User password:- root
 
-**Features**
 
+<span style="color:orange;">User Stories</span>
+---------
 * Super-user can ADD/UPDATE/DELETE products
-* Registered user can view all products
-* Registered user can view all a detail of a product
+
+
+* Every user who navigate to the web app can view all products
+
+	*We can execute this GET all curl when the home page loading*
+	```
+	curl -X GET "http://127.0.0.1:8000/api/product/" -H  "accept: application/json" -H  "X-CSRFToken: UIOj2ldw8V1IZFqjoa93WeD9p8dbx3TyrWIN6nSizYPVLFw3Bv58SN1ItgCH1b3Y
+ 	```
+ 	![Alt text](Demo Images/get_all_products.png?raw=true "Sample Demo")
+
+* Every user who navigate to the web app can view detail of a product
+
+	*We can execute this GET by id when user click specific product to show all details, here product id=3*
+	```
+	curl -X GET "http://127.0.0.1:8000/api/product/3/" -H  "accept: application/json" -H  "X-CSRFToken: UIOj2ldw8V1IZFqjoa93WeD9p8dbx3TyrWIN6nSizYPVLFw3Bv58SN1ItgCH1b3Y
+    ```
+ 	![Alt text](Demo Images/get_detail_of_product.png?raw=true "Sample Demo")
+
+
 * Registered user can add orders
 * Registered user can view all orders
 * Registered user can edit their orders
