@@ -22,12 +22,4 @@ COPY . .
 
 RUN chmod u+x ./manage.py
 RUN ./manage.py collectstatic --noinput
-
-# Ops Parameters
-ENV WORKERS=2
-ENV PORT=80
-ENV PYTHONUNBUFFERED=1
-
-EXPOSE ${PORT}
-
-CMD uwsgi --http :${PORT} --processes ${WORKERS} --static-map /static=/static --module autocompany.wsgi:application
+RUN chmod u+x entrypoint.sh
