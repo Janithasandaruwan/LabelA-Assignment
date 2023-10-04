@@ -4,7 +4,7 @@
 
 **<span style="color:green;">Python Version = 3.9</span>**
 
-**<span style="color:green;">Postgresql Version = ?????</span>**
+**<span style="color:green;">Postgresql Version = psql (PostgreSQL) 16.0 (Debian 16.0-1.pgdg120+1)</span>**
 
 First you have to clone the project
 
