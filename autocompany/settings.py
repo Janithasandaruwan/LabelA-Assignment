@@ -89,7 +89,7 @@ DATABASES = {
 
 # Define the live URL
 # LIVE_URL = "http://127.0.0.1:8000"
-LIVE_URL = "http://localhost/"
+LIVE_URL = "http://localhost"
 
 
 # Password validation
