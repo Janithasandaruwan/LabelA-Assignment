@@ -1,5 +1,6 @@
 #!/bin/bash
 
+docker-compose build
 python manage.py makemigrations
 python manage.py migrate
 export PORT=80
