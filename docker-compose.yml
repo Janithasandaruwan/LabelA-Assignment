@@ -10,7 +10,7 @@ services:
       - POSTGRES_PASSWORD=root
   web:
     build: .
-    entrypoint: ["./entrypoint.sh"]
+    #entrypoint: ["./entrypoint.sh"]
     volumes:
       - .:/app
     ports:

@@ -21,4 +21,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 RUN chmod u+x ./manage.py
-RUN chmod u+x entrypoint.sh
+RUN chmod u+x ./entrypoint.sh
+ENTRYPOINT ["./entrypoint.sh"]
